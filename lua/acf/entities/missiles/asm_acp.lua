@@ -91,12 +91,12 @@ Missiles.RegisterItem("KH-31", "ARM", {
 
 Missiles.RegisterItem("AGM-65", "ATGM", {
 	Name		= "AGM-65 Maverick Missile",
-	Description	= "A powerful medium-range multi-purpose Missile, being extremely agile, its able to be used vs low altitude aircraft and for attacking top of tanks. But its somewhat slow",
+	Description	= "A powerful but somewhat slow versitile US made missile with a variety of seeker heads.",
 	Model		= "models/missiles/arend/agm65d.mdl",
 	Length		= 99 * 2.53,
 	Caliber		= 305,
 	Mass		= 300,
-	Year		= 1974,
+	Year		= 1972,
 	ReloadTime	= 30,
 	ExhaustPos  = Vector(-29),
 	Racks		= { ["1xRK"] = true },
