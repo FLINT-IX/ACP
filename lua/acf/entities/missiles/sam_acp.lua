@@ -16,7 +16,7 @@ Missiles.RegisterItem("9M317M", "SAM", {
 	Fuzes		= { Contact = true, Radio = true },
 	SeekCone	= 10,
 	ViewCone	= 20,
-	Agility		= 0.175,
+	Agility		= 0.1,
 	ArmDelay	= 0.5,
 	Round = {
 		Model           = "models/macc/9M317ME_open.mdl",
@@ -27,7 +27,7 @@ Missiles.RegisterItem("9M317M", "SAM", {
 		PropLength      = 175,
 		Thrust          = 1000000, -- in kg*in/s^2
 		FuelConsumption = 0.04, -- in g/s/f
-		StarterPercent  = 0.05,
+		StarterPercent  = 0.15,
 		MaxAgilitySpeed = 300, -- in m/s
 		DragCoef        = 0.03,
 		FinMul          = 0.3,
@@ -54,13 +54,13 @@ Missiles.RegisterItem("MIM-146", "ATGM", {
 	ReloadTime	= 30,
 	ExhaustPos  = Vector(-44),
 	Racks		= { ["1x VT-1"] = true },
-	Guidance	= { Dumb = true, ["Laser"] = true, ["Semi-Active Radar"] = true },
+	Guidance	= { Dumb = true, ["Semi-Active Radar"] = true },
 	Navigation  = "APN",
 	Fuzes		= { Contact = true },
 	SeekCone	= 20,
 	ViewCone	= 40,
-	Agility		= 0.003,
-	ArmDelay	= 0.35,
+	Agility		= 0.01,
+	ArmDelay	= 0.05,
 	Round = {
 		Model           = "models/missiles/mim146.mdl",
 		RackModel       = "models/missiles/arend/vt1_folded.mdl",
@@ -69,15 +69,15 @@ Missiles.RegisterItem("MIM-146", "ATGM", {
 		Armor           = 2,
 		ProjLength      = 20,
 		PropLength      = 100,
-		Thrust          = 100000, -- in kg*in/s^2
-		FuelConsumption = 0.018, -- in g/s/f
+		Thrust          = 90000, -- in kg*in/s^2
+		FuelConsumption = 0.1, -- in g/s/f
 		StarterPercent  = 0.1,
 		MaxAgilitySpeed = 300, -- in m/s
 		DragCoef        = 0.003,
 		FinMul          = 0.04,
 		GLimit          = 20,
 		TailFinMul      = 0.001,
-		PenMul          = 1,
+		PenMul          = 2,
 		LinerMassMul    = 1,
 		ActualLength    = 86,
 		ActualWidth     = 8
@@ -90,20 +90,20 @@ Missiles.RegisterItem("MIM-146", "ATGM", {
 
 Missiles.RegisterItem("9M311", "SAM", {
 	Name		= "9M311 Grison",
-	Description	= "Soviet era two stage surface to air missile commonly mounted on the Tunguska SPAAGs.",
+	Description	= "Late Cold War two stage surface to air missile commonly mounted on the Tunguska SPAAGs.",
 	Model		= "models/missiles/arend/9m311_unfolded.mdl",
 	Length		= 248,
 	Caliber		= 76,
 	Mass		= 71,
-	Year		= 1960,
+	Year		= 1982,
 	ReloadTime	= 45,
-	ExhaustPos  = Vector(-44),
+	ExhaustPos  = Vector(-49.5),
 	Racks		= { ["1x 9m311"] = true },
 	Guidance	= { Dumb = true, ["Semi-Active Radar"] = true },
 	Navigation  = "APN",
 	Fuzes		= { Contact = true, Radio = true },
-	SeekCone	= 20,
-	ViewCone	= 40,
+	SeekCone	= 15,
+	ViewCone	= 25,
 	Agility		= 0.0015,
 	ArmDelay	= 0.2,
 	Round = {
@@ -114,11 +114,11 @@ Missiles.RegisterItem("9M311", "SAM", {
 		Armor           = 2,
 		ProjLength      = 100,
 		PropLength      = 140,
-		Thrust          = 800000, -- in kg*in/s^2
-		FuelConsumption = 0.01, -- in g/s/f
-		StarterPercent  = 0.15,
+		Thrust          = 700000, -- in kg*in/s^2
+		FuelConsumption = 0.02, -- in g/s/f
+		StarterPercent  = 0.10,
 		MaxAgilitySpeed = 300, -- in m/s
-		DragCoef        = 0.003,
+		DragCoef        = 0.01,
 		FinMul          = 0.04,
 		GLimit          = 20,
 		TailFinMul      = 0.001,
@@ -133,22 +133,22 @@ Missiles.RegisterItem("9M311", "SAM", {
 
 Missiles.RegisterItem("9M331", "SAM", {
 	Name		= "9M331 Gauntlet",
-	Description	= "Soviet era surface to air missile commonly found on Tor Systems.",
+	Description	= "Soviet era surface to air missile commonly found on Tor Systems. Larger view cone allows for a fixed vertical mounting.",
 	Model		= "models/missiles/arend/9m331_folded.mdl",
 	Length		= 290,
 	Caliber		= 235,
 	Mass		= 167,
-	Year		= 1986,
-	ReloadTime	= 45,
+	Year		= 1991,
+	ReloadTime	= 60,
 	ExhaustPos  = Vector(-44),
 	Racks		= { ["1x 9m331"] = true },
 	Guidance	= { Dumb = true, ["Semi-Active Radar"] = true, ["Anti-missile"] = true },
 	Navigation  = "APN",
 	Fuzes		= { Contact = true, Radio = true },
-	SeekCone	= 20,
-	ViewCone	= 40,
-	Agility		= 0.001,
-	ArmDelay	= 0.2,
+	SeekCone	= 10,
+	ViewCone	= 180,
+	Agility		= 0.3,
+	ArmDelay	= 0.05,
 	Round = {
 		Model           = "models/missiles/arend/9m331_unfolded.mdl",
 		RackModel       = "models/missiles/arend/9m331_folded.mdl",
@@ -157,14 +157,14 @@ Missiles.RegisterItem("9M331", "SAM", {
 		Armor           = 5,
 		ProjLength      = 80,
 		PropLength      = 75,
-		Thrust          = 600000, -- in kg*in/s^2
-		FuelConsumption = 0.03, -- in g/s/f
-		StarterPercent  = 0.1,
+		Thrust          = 900000, -- in kg*in/s^2
+		FuelConsumption = 0.01, -- in g/s/f
+		StarterPercent  = 0.024,
 		MaxAgilitySpeed = 300, -- in m/s
 		DragCoef        = 0.003,
 		FinMul          = 0.04,
-		GLimit          = 20,
-		TailFinMul      = 0.001,
+		GLimit          = 30,
+		TailFinMul      = 0.03,
 		ActualLength    = 125,
 		ActualWidth     = 12.5
 	},

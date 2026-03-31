@@ -26,7 +26,7 @@ Missiles.RegisterItem("AGM-88", "ARM", {
 		PropLength      = 100,
 		Thrust          = 300000, -- in kg*in/s^2
 		FuelConsumption = 0.008, -- in g/s/f
-		StarterPercent  = 0.05,
+		StarterPercent  = 0.15,
 		MaxAgilitySpeed = 350, -- in m/s
 		DragCoef        = 0.06,
 		FinMul          = 0.2,
@@ -56,10 +56,10 @@ Missiles.RegisterItem("KH-31", "ARM", {
 	Guidance	= { Dumb = true, ["Anti-radiation"] = true },
 	Navigation  = "PN",
 	Fuzes		= { Contact = true, Optical = true, Radio = true },
-	ViewCone	= 40,
+	ViewCone	= 20,
 	SeekCone	= 10,
 	Agility		= 0.008,
-	ArmDelay	= 0.5,
+	ArmDelay	= 0.3,
 	Round = {
 		Model           = "models/missiles/arend/r33.mdl",
 		RackModel       = "models/missiles/arend/r33.mdl",
@@ -91,22 +91,22 @@ Missiles.RegisterItem("KH-31", "ARM", {
 
 Missiles.RegisterItem("AGM-65", "ATGM", {
 	Name		= "AGM-65 Maverick Missile",
-	Description	= "A powerful but somewhat slow versitile US made missile with a variety of seeker heads.",
+	Description	= "A powerful but somewhat slow, versitile US made missile with a variety of seeker heads.",
 	Model		= "models/missiles/arend/agm65d.mdl",
 	Length		= 99 * 2.53,
 	Caliber		= 305,
 	Mass		= 300,
 	Year		= 1972,
 	ReloadTime	= 30,
-	ExhaustPos  = Vector(-29),
+	ExhaustPos  = Vector(-45),
 	Racks		= { ["1xRK"] = true },
 	Guidance	= { Dumb = true, Infrared = true, ["Radio (SACLOS)"] = true, Laser = true },
 	Navigation  = "PN",
 	Fuzes		= { Contact = true },
-	ViewCone	= 40,
+	ViewCone	= 20,
 	SeekCone	= 10,
-	Agility		= 0.0075,
-	ArmDelay	= 0.5,
+	Agility		= 0.002,
+	ArmDelay	= 0.3,
 	Round = {
 		Model           = "models/missiles/arend/agm65d.mdl",
 		RackModel       = "models/missiles/arend/agm65d.mdl",
@@ -114,11 +114,11 @@ Missiles.RegisterItem("AGM-65", "ATGM", {
 		Armor           = 5,
 		ProjLength      = 30,
 		PropLength      = 56,
-		Thrust          = 150000, -- in kg*in/s^2
-		FuelConsumption = 0.02, -- in g/s/f
-		StarterPercent  = 0.12,
+		Thrust          = 80000, -- in kg*in/s^2
+		FuelConsumption = 0.15, -- in g/s/f
+		StarterPercent  = 0.15,
 		MaxAgilitySpeed = 40, -- in m/s
-		DragCoef        = 0.005,
+		DragCoef        = 0.033,
 		FinMul          = 0.1,
 		GLimit          = 14,
 		TailFinMul      = 0.01,
@@ -145,30 +145,30 @@ Missiles.RegisterItem("KH-29", "ATGM", {
 	Mass		= 685,
 	Year		= 1974,
 	ReloadTime	= 30,
-	ExhaustPos  = Vector(-29),
+	ExhaustPos  = Vector(-78),
 	Racks		= { ["1xRK"] = true },
 	Guidance	= { Dumb = true, Infrared = true, ["Radio (SACLOS)"] = true, Laser = true },
 	Navigation  = "PN",
 	Fuzes		= { Contact = true },
-	ViewCone	= 40,
+	ViewCone	= 15,
 	SeekCone	= 10,
-	Agility		= 0.005,
+	Agility		= 0.002,
 	ArmDelay	= 0.5,
 	Round = {
 		Model           = "models/missiles/arend/kh29.mdl",
 		RackModel       = "models/missiles/arend/kh29.mdl",
 		MaxLength       = 193 * 2.53,
-		Armor           = 2,
+		Armor           = 10,
 		ProjLength      = 65,
 		PropLength      = 40,
 		Thrust          = 160000, -- in kg*in/s^2
 		FuelConsumption = 0.03, -- in g/s/f
-		StarterPercent  = 0.05,
+		StarterPercent  = 0.14,
 		MaxAgilitySpeed = 40, -- in m/s
-		DragCoef        = 0.01,
-		FinMul          = 0.1,
+		DragCoef        = 0.045,
+		FinMul          = 0.2,
 		GLimit          = 14,
-		TailFinMul      = 0.01,
+		TailFinMul      = 0.02,
 		PenMul          = 0.35,
 		FillerMul       = 12,
 		LinerMassMul    = 1,

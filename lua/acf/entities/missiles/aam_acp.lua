@@ -25,7 +25,7 @@ Missiles.RegisterItem("R-60", "AAM", {
 		Armor           = 2,
 		PropLength      = 120,
 		Thrust          = 700000, -- in kg*in/s^2
-		FuelConsumption = 0.018, -- in g/s/f
+		FuelConsumption = 0.03, -- in g/s/f
 		StarterPercent  = 0.05,
 		MaxAgilitySpeed = 300, -- in m/s
 		DragCoef        = 0.008,
@@ -57,15 +57,15 @@ Missiles.RegisterItem("R-73", "AAM", {
 	Navigation  = "APN",
 	Fuzes		= { Contact = true, Radio = true },
 	SeekCone	= 10,
-	ViewCone	= 30,
-	Agility		= 0.025,
+	ViewCone	= 20,
+	Agility		= 0.023,
 	ArmDelay	= 0.2,
 	Round = {
 		Model           = "models/missiles/arend/r73.mdl",
 		MaxLength       = 293,
 		Armor           = 2,
 		ProjLength      = 30,
-		PropLength      = 75,
+		PropLength      = 80,
 		Thrust          = 750000, -- in kg*in/s^2
 		FuelConsumption = 0.025, -- in g/s/f
 		StarterPercent  = 0.065,
@@ -100,7 +100,7 @@ Missiles.RegisterItem("R-77", "AAM", {
 	Fuzes		= { Contact = true, Radio = true },
 	SeekCone	= 12.5,
 	ViewCone	= 32.5,
-	Agility		= 0.004,
+	Agility		= 0.01,
 	ArmDelay	= 0.2,
 	Round = {
 		Model           = "models/missiles/arend/r77.mdl",
@@ -110,9 +110,9 @@ Missiles.RegisterItem("R-77", "AAM", {
 		PropLength      = 150,
 		Thrust          = 1300000, -- in kg*in/s^2
 		FuelConsumption = 0.02, -- in g/s/f
-		StarterPercent  = 0.05,
+		StarterPercent  = 0.10,
 		MaxAgilitySpeed = 350, -- in m/s
-		DragCoef        = 0.05,
+		DragCoef        = 0.03,
 		FinMul          = 0.2,
 		GLimit          = 20,
 		TailFinMul      = 0.001,
@@ -137,12 +137,12 @@ Missiles.RegisterItem("R-33", "AAM", {
 	ReloadTime	= 40,
 	ExhaustPos  = Vector(-60),
 	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, ["Semi-Active Radar"] = true },
+	Guidance	= { Dumb = true, ["Semi-Active Radar"] = true, ["Active Radar"] = true },
 	Navigation  = "APN",
 	Fuzes		= { Contact = true, Radio = true },
 	SeekCone	= 10,
 	ViewCone	= 20,
-	Agility		= 0.02,
+	Agility		= 0.0185,
 	ArmDelay	= 0.4,
 	Round = {
 		Model           = "models/missiles/arend/r33.mdl",
