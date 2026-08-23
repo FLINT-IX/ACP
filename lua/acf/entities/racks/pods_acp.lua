@@ -1,67 +1,67 @@
-local Racks = ACF.Classes.Racks
+local Classes = ACF.Classes
 
-Racks.Register("1x VT-1", {
-	Name		= "VT-1 Single Tube",
-	Description	= "A single VT-1 round.",
-	Model		= "models/missiles/arend/vt1_launcher.mdl",
-	EntType		= "Pod",
-	Caliber		= 152,
-	Mass		= 85,
-	Year		= 1970,
-	Armor		= 2.5,
-	Preview = {
+Classes.DefineClass("ACF.Racks.VT1xPOD", "ACF.Racks.BaseRack", function(CLASS)
+	CLASS.Name		= "VT-1 Single Tube"
+	CLASS.Description	= "A single VT-1 round."
+	CLASS.Model		= "models/missiles/arend/vt1_launcher.mdl"
+	CLASS.EntType		= "Pod"
+	CLASS.Caliber		= 152
+	CLASS.Mass		= 85
+	CLASS.Year		= 1970
+	CLASS.Armor		= 2.5
+	CLASS.Preview = {
 		Height = 110,
 		FOV    = 60,
-	},
-
-	ProtectMissile = true,
-	HideMissile = false,
-
-	MountPoints = {
-		{ Name = "missile1", Position = Vector(0, 0, 0) }
 	}
-})
 
-Racks.Register("1x 9m311", {
-	Name		= "Single 9M311 Launch Tube",
-	Description	= "A single 9M311 round.",
-	Model		= "models/missiles/arend/9m311_tube.mdl",
-	EntType		= "Pod",
-	Caliber		= 76,
-	Mass		= 57,
-	Year		= 1982,
-	Armor		= 2.5,
-	Preview = {
+	CLASS.ProtectMissile = true
+	CLASS.HideMissile = false
+
+	CLASS.MountPoints = {
+		{ Name = "missile1", Position = Vector(0, 0, 0) },
+	}
+end)
+
+Classes.DefineClass("ACF.Racks.9m311xPOD", "ACF.Racks.BaseRack", function(CLASS)
+	CLASS.Name		= "Single 9M311 Launch Tube"
+	CLASS.Description	= "A single 9M311 round."
+	CLASS.Model		= "models/missiles/arend/9m311_tube.mdl"
+	CLASS.EntType		= "Pod"
+	CLASS.Caliber		= 76
+	CLASS.Mass		= 57
+	CLASS.Year		= 1982
+	CLASS.Armor		= 2.5
+	CLASS.Preview = {
 		Height = 110,
 		FOV    = 60,
-	},
-
-	ProtectMissile = true,
-	HideMissile = false,
-
-	MountPoints = {
-		{ Name = "missile1", Position = Vector(0, 0, 0) }
 	}
-})
 
-Racks.Register("1x 9m331", {
-	Name		= "Single 9M331 Launch Rack",
-	Description	= "A single 9M331 round.",
-	Model		= "models/missiles/arend/9m331_launcher_4_v2.mdl",
-	EntType		= "Pod",
-	Caliber		= 235,
-	Mass		= 35,
-	Year		= 1986,
-	Armor		= 2.5,
-	Preview = {
+	CLASS.ProtectMissile = true
+	CLASS.HideMissile = false
+
+	CLASS.MountPoints = {
+		{ Name = "missile1", Position = Vector(0, 0, 0) },
+	}
+end)
+
+Classes.DefineClass("ACF.Racks.9m331xPOD", "ACF.Racks.BaseRack", function(CLASS)
+	CLASS.Name		= "Single 9M331 Launch Rack"
+	CLASS.Description	= "A single 9M331 round."
+	CLASS.Model		= "models/missiles/arend/9m331_launcher_4_v2.mdl"
+	CLASS.EntType		= "Pod"
+	CLASS.Caliber		= 235
+	CLASS.Mass		= 35
+	CLASS.Year		= 1986
+	CLASS.Armor		= 2.5
+	CLASS.Preview = {
 		Height = 110,
 		FOV    = 60,
-	},
-
-	ProtectMissile = false,
-	HideMissile = false,
-
-	MountPoints = {
-		{ Name = "missile1", Position = Vector(-8.3,0,-6.2) }
 	}
-})
+
+	CLASS.ProtectMissile = false
+	CLASS.HideMissile = false
+
+	CLASS.MountPoints = {
+		{ Name = "missile1", Position = Vector(-8.30,-6.2) },
+	}
+end)

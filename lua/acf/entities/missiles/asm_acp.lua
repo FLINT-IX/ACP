@@ -1,24 +1,24 @@
-local Missiles = ACF.Classes.Missiles
+local Classes = ACF.Classes
 
-Missiles.RegisterItem("AGM-88", "ARM", {
-	Name		= "AGM-88 HARM",
-	Description	= "Advanced long range anti-radiation missile with improved guidance. Significantly heavier but makes up for it in range and tracking.",
-	Model		= "models/missiles/arend/agm-88.mdl",
-	Length		= 417,
-	Caliber		= 254,
-	Mass		= 361,
-	Year		= 1985,
-	ReloadTime	= 45,
-	ExhaustPos  = Vector(-70),
-	Racks		= { ["1xRK"] = true, ["2xRK"] = true},
-	Guidance	= { Dumb = true, ["Anti-radiation"] = true },
-	Navigation  = "PN",
-	Fuzes		= { Contact = true, Optical = true, Radio = true },
-	SeekCone	= 10,
-	ViewCone	= 15,
-	Agility		= 0.02,
-	ArmDelay	= 0.3,
-	Round = {
+Classes.DefineClass("ACF.Missiles.AntiRadiation.AGM-88", "ACF.Missiles.AntiRadiation", function(CLASS)
+	CLASS.Name		= "AGM-88 HARM"
+	CLASS.Description	= "Advanced long range anti-radiation missile with improved guidance. Significantly heavier but makes up for it in range and tracking."
+	CLASS.Model		= "models/missiles/arend/agm-88.mdl"
+	CLASS.Length		= 417
+	CLASS.Caliber		= 254
+	CLASS.Mass		= 361
+	CLASS.Year		= 1985
+	CLASS.ReloadTime	= 45
+	CLASS.ExhaustPos  = Vector(-70)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true, ["ACF.Racks.2xRK"] = true}
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.AntiRadiation"] = true }
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Optical"] = true }
+	CLASS.SeekCone	= 10
+	CLASS.ViewCone	= 15
+	CLASS.Agility		= 0.02
+	CLASS.ArmDelay	= 0.3
+	CLASS.Round = {
 		Model           = "models/missiles/arend/agm-88.mdl",
 		MaxLength       = 417,
 		Armor           = 2,
@@ -35,32 +35,32 @@ Missiles.RegisterItem("AGM-88", "ARM", {
 		CanDelayLaunch  = true,
 		ActualLength    = 160,
 		ActualWidth     = 20
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 80,
 		FOV    = 60,
-	},
-})
+	}
+end)
 
-Missiles.RegisterItem("KH-31", "ARM", {
-	Name		= "KH-31 Krypton",
-	Description	= "Versatile soviet anti ship and anti radiation missile. First of its kind to be capable of supersonic flight. Reduced warhead for increased speed.",
-	Model		= "models/missiles/arend/r33.mdl",
-	Length		= 185 * 2.53,
-	Caliber		= 360,
-	Mass		= 610,
-	Year		= 1974,
-	ReloadTime	= 65,
-	ExhaustPos  = Vector(-29),
-	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, ["Anti-radiation"] = true },
-	Navigation  = "PN",
-	Fuzes		= { Contact = true, Optical = true, Radio = true },
-	ViewCone	= 20,
-	SeekCone	= 10,
-	Agility		= 0.008,
-	ArmDelay	= 0.3,
-	Round = {
+Classes.DefineClass("ACF.Missiles.AntiRadiation.KH-31", "ACF.Missiles.AntiRadiation", function(CLASS)
+	CLASS.Name		= "KH-31 Krypton"
+	CLASS.Description	= "Versatile soviet anti ship and anti radiation missile. First of its kind to be capable of supersonic flight. Reduced warhead for increased speed."
+	CLASS.Model		= "models/missiles/arend/r33.mdl"
+	CLASS.Length		= 185 * 2.53
+	CLASS.Caliber		= 360
+	CLASS.Mass		= 610
+	CLASS.Year		= 1974
+	CLASS.ReloadTime	= 65
+	CLASS.ExhaustPos  = Vector(-29)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.AntiRadiation"] = true }
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Optical"] = true }
+	CLASS.ViewCone	= 20
+	CLASS.SeekCone	= 10
+	CLASS.Agility		= 0.008
+	CLASS.ArmDelay	= 0.3
+	CLASS.Round = {
 		Model           = "models/missiles/arend/r33.mdl",
 		RackModel       = "models/missiles/arend/r33.mdl",
 		MaxLength       = 185 * 2.53,
@@ -82,32 +82,32 @@ Missiles.RegisterItem("KH-31", "ARM", {
 		CanDelayLaunch  = true,
 		ActualLength    = 185,
 		ActualWidth     = 32
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 90,
 		FOV    = 60,
-	},
-})
+	}
+end)
 
-Missiles.RegisterItem("AGM-65", "ATGM", {
-	Name		= "AGM-65 Maverick Missile",
-	Description	= "A powerful but somewhat slow, versitile US made missile with a variety of seeker heads.",
-	Model		= "models/missiles/arend/agm65d.mdl",
-	Length		= 99 * 2.53,
-	Caliber		= 305,
-	Mass		= 300,
-	Year		= 1972,
-	ReloadTime	= 30,
-	ExhaustPos  = Vector(-45),
-	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, Infrared = true, ["Radio (SACLOS)"] = true, Laser = true },
-	Navigation  = "PN",
-	Fuzes		= { Contact = true },
-	ViewCone	= 20,
-	SeekCone	= 10,
-	Agility		= 0.002,
-	ArmDelay	= 0.3,
-	Round = {
+Classes.DefineClass("ACF.Missiles.AntiTankGuided.AGM-65", "ACF.Missiles.AntiTankGuided", function(CLASS)
+	CLASS.Name		= "AGM-65 Maverick Missile"
+	CLASS.Description	= "A powerful but somewhat slow, versitile US made missile with a variety of seeker heads."
+	CLASS.Model		= "models/missiles/arend/agm65d.mdl"
+	CLASS.Length		= 99 * 2.53
+	CLASS.Caliber		= 305
+	CLASS.Mass		= 300
+	CLASS.Year		= 1972
+	CLASS.ReloadTime	= 30
+	CLASS.ExhaustPos  = Vector(-45)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, Infrared = true, ["ACF.Missiles.Guidance.WireSACLOS"] = true, ["ACF.Missiles.Guidance.Laser"] = true }
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes		= { Contact = true }
+	CLASS.ViewCone	= 20
+	CLASS.SeekCone	= 10
+	CLASS.Agility		= 0.002
+	CLASS.ArmDelay	= 0.3
+	CLASS.Round = {
 		Model           = "models/missiles/arend/agm65d.mdl",
 		RackModel       = "models/missiles/arend/agm65d.mdl",
 		MaxLength       = 99 * 2.53,
@@ -129,32 +129,32 @@ Missiles.RegisterItem("AGM-65", "ATGM", {
 		CanDelayLaunch  = true,
 		ActualLength    = 110,
 		ActualWidth     = 21
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 80,
 		FOV    = 60,
-	},
-})
+	}
+end)
 
-Missiles.RegisterItem("KH-29", "ATGM", {
-	Name		= "KH-29 Kedge",
-	Description	= "A powerful soviet era stand off missile primarily used against larger battlefield targets such as buildings, depots and bridges, and also ships, hardened aircraft shelters and even runways.",
-	Model		= "models/missiles/arend/kh29.mdl",
-	Length		= 193 * 2.53,
-	Caliber		= 380,
-	Mass		= 685,
-	Year		= 1974,
-	ReloadTime	= 30,
-	ExhaustPos  = Vector(-78),
-	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, Infrared = true, ["Radio (SACLOS)"] = true, Laser = true },
-	Navigation  = "PN",
-	Fuzes		= { Contact = true },
-	ViewCone	= 15,
-	SeekCone	= 10,
-	Agility		= 0.002,
-	ArmDelay	= 0.5,
-	Round = {
+Classes.DefineClass("ACF.Missiles.AntiTankGuided.KH-29", "ACF.Missiles.AntiTankGuided", function(CLASS)
+	CLASS.Name		= "KH-29 Kedge"
+	CLASS.Description	= "A powerful soviet era stand off missile primarily used against larger battlefield targets such as buildings, depots and bridges, and also ships, hardened aircraft shelters and even runways."
+	CLASS.Model		= "models/missiles/arend/kh29.mdl"
+	CLASS.Length		= 193 * 2.53
+	CLASS.Caliber		= 380
+	CLASS.Mass		= 685
+	CLASS.Year		= 1974
+	CLASS.ReloadTime	= 30
+	CLASS.ExhaustPos  = Vector(-78)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, Infrared = true, ["ACF.Missiles.Guidance.WireSACLOS"] = true, ["ACF.Missiles.Guidance.Laser"] = true }
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes		= { Contact = true }
+	CLASS.ViewCone	= 15
+	CLASS.SeekCone	= 10
+	CLASS.Agility		= 0.002
+	CLASS.ArmDelay	= 0.5
+	CLASS.Round = {
 		Model           = "models/missiles/arend/kh29.mdl",
 		RackModel       = "models/missiles/arend/kh29.mdl",
 		MaxLength       = 193 * 2.53,
@@ -176,9 +176,9 @@ Missiles.RegisterItem("KH-29", "ATGM", {
 		CanDelayLaunch  = true,
 		ActualLength    = 155,
 		ActualWidth     = 30
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 80,
 		FOV    = 60,
-	},
-})
+	}
+end)

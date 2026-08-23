@@ -1,38 +1,37 @@
-local Missiles = ACF.Classes.Missiles
-
-Missiles.Register("TAC", {
-	Name		= "Tactical Weapons",
-	Description	= "Specialized weapons that destroy a variety of targets at extreme ranges.",
-	Sound		= "acf_missiles/missiles/missile_rocket.mp3",
-	Effect		= "Rocket Motor ATGM",
-	Spread		= 1,
-	Blacklist	= { "AP", "APHE", "HP", "FL", "SM" },
-	LimitConVar = {
+local Classes = ACF.Classes
+Classes.DefineClass("ACF.Missiles.Tactical", "ACF.Missiles.BaseMissile", function(CLASS)
+	CLASS.Name			= "Tactical Missiles"
+	CLASS.ID 			= "TAC"
+	CLASS.Description	= "Specialized weapons that destroy a variety of targets at extreme ranges."
+	CLASS.Sound			= "acf_missiles/missiles/missile_rocket.mp3"
+	CLASS.Effect		= "Rocket Motor ATGM"
+	CLASS.Spread		= 1
+	CLASS.Blacklist		= { ["ACF.Ammunition.AP"] = true, ["ACF.Ammunition.APHE"] = true, ["ACF.Ammunition.HP"] = true, ["ACF.Ammunition.FL"] = true, ["ACF.Ammunition.SM"] = true }
+	CLASS.LimitConVar 	= {
 		Name = "_acfm_tac",
 		Amount = 8,
-		Text = "Maximum number of Tactical missiles that can be loaded at once. Differentiates from the acf_rack limit."
+		Text = "Maximum number of tactical missiles that can be loaded at once. Differentiates from the acf_rack limit."
 	}
-})
-
-Missiles.RegisterItem("3M-54 Kalibr", "TAC", {
-	Name		= "3M-54 Kalibr",
-	Description	= "Russia's cruise missile. Fast and long range. This massive missile can easily remove entire regions. Cannot be updated after it has launched.",
-	Model		= "models/macc/Kalibr.mdl",
-	Length		= 250 * 2.53,
-	Caliber		= 533,
-	Mass		= 2300,
-	Year		= 1983,
-	ReloadTime	= 120,
-	ExhaustPos  = Vector(-29),
-	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, ["Tactical GPS Guided"] = true},
-	Navigation  = "PN",
-	Fuzes		= { Contact = true },
-	ViewCone	= 40,
-	SeekCone	= 10,
-	Agility		= 0.065,
-	ArmDelay	= 0.5,
-	Round = {
+end)
+Classes.DefineClass("ACF.Missiles.Tactical.3M-54 Kalibr", "ACF.Missiles.Tactical", function(CLASS)
+	CLASS.Name		= "3M-54 Kalibr"
+	CLASS.Description	= "Russia's cruise missile. Fast and long range. This massive missile can easily remove entire regions. Cannot be updated after it has launched."
+	CLASS.Model		= "models/macc/Kalibr.mdl"
+	CLASS.Length		= 250 * 2.53
+	CLASS.Caliber		= 533
+	CLASS.Mass		= 2300
+	CLASS.Year		= 1983
+	CLASS.ReloadTime	= 120
+	CLASS.ExhaustPos  = Vector(-29)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true}
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
+	CLASS.ViewCone	= 40
+	CLASS.SeekCone	= 10
+	CLASS.Agility		= 0.065
+	CLASS.ArmDelay	= 0.5
+	CLASS.Round = {
 		Model           = "models/macc/Kalibr.mdl",
 		RackModel       = "models/macc/Kalibr_folded.mdl",
 		MaxLength       = 220,
@@ -54,32 +53,32 @@ Missiles.RegisterItem("3M-54 Kalibr", "TAC", {
 		CanDelayLaunch  = true,
 		ActualLength    = 341,
 		ActualWidth     = 30
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 90,
 		FOV    = 60,
-	},
-})
+	}
+end)
 
-Missiles.RegisterItem("BGM-109 Tomahawk", "TAC", {
-	Name		= "BGM-109 Tomahawk",
-	Description	= "The gold standard of cruise missiles. Subsonic and long range. Though slow this ordinance has extreme range and good maneuverability. Good for removing distant targets.",
-	Model		= "models/macc/Tomahawk.mdl",
-	Length		= 250 * 2.53,
-	Caliber		= 518,
-	Mass		= 1600,
-	Year		= 1983,
-	ReloadTime	= 120,
-	ExhaustPos  = Vector(-29),
-	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, ["Tactical GPS Guided"] = true},
-	Navigation  = "PN",
-	Fuzes		= { Contact = true },
-	ViewCone	= 30,
-	SeekCone	= 5,
-	Agility		= 0.075,
-	ArmDelay	= 0.5,
-	Round = {
+Classes.DefineClass("ACF.Missiles.Tactical.BGM-109 Tomahawk", "ACF.Missiles.Tactical", function(CLASS)
+	CLASS.Name		= "BGM-109 Tomahawk"
+	CLASS.Description	= "The gold standard of cruise missiles. Subsonic and long range. Though slow this ordinance has extreme range and good maneuverability. Good for removing distant targets."
+	CLASS.Model		= "models/macc/Tomahawk.mdl"
+	CLASS.Length		= 250 * 2.53
+	CLASS.Caliber		= 518
+	CLASS.Mass		= 1600
+	CLASS.Year		= 1983
+	CLASS.ReloadTime	= 120
+	CLASS.ExhaustPos  = Vector(-29)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true}
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
+	CLASS.ViewCone	= 30
+	CLASS.SeekCone	= 5
+	CLASS.Agility		= 0.075
+	CLASS.ArmDelay	= 0.5
+	CLASS.Round = {
 		Model           = "models/macc/Tomahawk.mdl",
 		RackModel       = "models/macc/Tomahawk_Folded.mdl",
 		MaxLength       = 250 * 2.53,
@@ -101,45 +100,45 @@ Missiles.RegisterItem("BGM-109 Tomahawk", "TAC", {
 		CanDelayLaunch  = true,
 		ActualLength    = 240,
 		ActualWidth     = 27.5
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 90,
 		FOV    = 60,
-	},
-})
+	}
+end)
 
 
-Missiles.RegisterItem("AGM-84 Harpoon", "TAC", {
-	Name		= "AGM-84 Harpoon",
-	Description	= "Versatile subsonic anti ship missile. Though somewhat sluggish packs a wallop.",
-	Model		= "models/missiles/1xagm84.mdl",
-	Length		= 205 * 2.53,
-	Caliber		= 343,
-	Mass		= 690,
-	Year		= 1977,
-	ReloadTime	= 9,
-	ExhaustPos  = Vector(-29),
-	Racks		= { ["1xRK"] = true, ["2xRK"] = true},
-	Guidance	= { Dumb = true, ["Semi-Active Radar"] = true },
-	Navigation  = "PN",
-	Fuzes		= { Contact = true },
-	ViewCone	= 40,
-	SeekCone	= 10,
-	Agility		= 0.001,
-	ArmDelay	= 0.5,
-	Round = {
+Classes.DefineClass("ACF.Missiles.Tactical.AGM-84 Harpoon", "ACF.Missiles.Tactical", function(CLASS)
+	CLASS.Name		= "AGM-84 Harpoon"
+	CLASS.Description	= "Versatile subsonic anti ship missile. Though somewhat sluggish packs a wallop."
+	CLASS.Model		= "models/missiles/1xagm84.mdl"
+	CLASS.Length		= 205 * 2.53
+	CLASS.Caliber		= 343
+	CLASS.Mass		= 690
+	CLASS.Year		= 1977
+	CLASS.ReloadTime	= 9
+	CLASS.ExhaustPos  = Vector(-29)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true, ["2xRK"] = true}
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["Semi-Active Radar"] = true }
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
+	CLASS.ViewCone	= 40
+	CLASS.SeekCone	= 10
+	CLASS.Agility		= 0.001
+	CLASS.ArmDelay	= 0.5
+	CLASS.Round = {
 		Model           = "models/missiles/1xagm84.mdl",
 		RackModel       = "models/missiles/1xagm84.mdl",
 		MaxLength       = 220,
 		Armor           = 5,
 		ProjLength      = 35,
 		PropLength      = 15,
-		Thrust          = 80000, -- in kg*in/s^2
+		Thrust          = 100000, -- in kg*in/s^2
 		FuelConsumption = 0.03, -- in g/s/f
-		StarterPercent  = 0.08,
+		StarterPercent  = 0.20,
 		MaxAgilitySpeed = 40, -- in m/s
-		DragCoef        = 0.5,
-		FinMul          = 0.7,
+		DragCoef        = 0.2,
+		FinMul          = 0.6,
 		GLimit          = 14,
 		TailFinMul      = 0.01,
 		PenMul          = 1,
@@ -149,32 +148,32 @@ Missiles.RegisterItem("AGM-84 Harpoon", "TAC", {
 		CanDelayLaunch  = true,
 		ActualLength    = 150,
 		ActualWidth     = 15
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 90,
 		FOV    = 60,
-	},
-})
+	}
+end)
 
-Missiles.RegisterItem("Storm Shadow", "TAC", {
-	Name		= "SCALP-EG Storm Shadow",
-	Description	= "The stormshadow is a low observability, turbojet driven cruise missile. Though slow this ordinance has extreme range, good maneuverability, staying time. And will obliterate anything it touches.",
-	Model		= "models/macc/Storm_Shadow_Open.mdl",
-	Length		= 205 * 2.53,
-	Caliber		= 480,
-	Mass		= 1300,
-	Year		= 2003,
-	ReloadTime	= 12,
-	ExhaustPos  = Vector(-29),
-	Racks		= { ["1xRK"] = true },
-	Guidance	= { Dumb = true, ["Tactical GPS Guided"] = true},
-	Navigation  = "PN",
-	Fuzes		= { Contact = true },
-	ViewCone	= 40,
-	SeekCone	= 10,
-	Agility		= 0.0008,
-	ArmDelay	= 0.5,
-	Round = {
+Classes.DefineClass("ACF.Missiles.Tactical.Storm Shadow", "ACF.Missiles.Tactical", function(CLASS)
+	CLASS.Name		= "SCALP-EG Storm Shadow"
+	CLASS.Description	= "The stormshadow is a low observability, turbojet driven cruise missile. Though slow this ordinance has extreme range, good maneuverability, staying time. And will obliterate anything it touches."
+	CLASS.Model		= "models/macc/Storm_Shadow_Open.mdl"
+	CLASS.Length		= 205 * 2.53
+	CLASS.Caliber		= 480
+	CLASS.Mass		= 1300
+	CLASS.Year		= 2003
+	CLASS.ReloadTime	= 12
+	CLASS.ExhaustPos  = Vector(-29)
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true}
+	CLASS.Navigation  = "PN"
+	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
+	CLASS.ViewCone	= 40
+	CLASS.SeekCone	= 10
+	CLASS.Agility		= 0.0008
+	CLASS.ArmDelay	= 0.5
+	CLASS.Round = {
 		Model           = "models/macc/Storm_Shadow_Open.mdl",
 		RackModel       = "models/macc/Storm_Shadow_Closed.mdl",
 		MaxLength       = 220,
@@ -196,9 +195,9 @@ Missiles.RegisterItem("Storm Shadow", "TAC", {
 		CanDelayLaunch  = true,
 		ActualLength    = 210,
 		ActualWidth     = 25
-	},
-	Preview = {
+	}
+	CLASS.Preview = {
 		Height = 90,
 		FOV    = 60,
-	},
-})
+	}
+end)
