@@ -11,9 +11,9 @@ Classes.DefineClass("ACF.Missiles.SurfaceToAir.9M317M", "ACF.Missiles.SurfaceToA
 	CLASS.ReloadTime	= 90
 	CLASS.ExhaustPos  = Vector(-60)
 	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true, ["ACF.Racks.2xRK"] = true }
-	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["Semi-Active Radar"] = true, ["Active Radar"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.SemiActiveRadar"] = true, ["ACF.Missiles.Guidance.ActiveRadar"] = true }
 	CLASS.Navigation  = "APN"
-	CLASS.Fuzes		= { Contact = true, Radio = true }
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Radio"] = true }
 	CLASS.SeekCone	= 10
 	CLASS.ViewCone	= 20
 	CLASS.Agility		= 0.1
@@ -43,7 +43,7 @@ Classes.DefineClass("ACF.Missiles.SurfaceToAir.9M317M", "ACF.Missiles.SurfaceToA
 	}
 end)
 
-Classes.DefineClass("ACF.Missiles.AntiTankGuided.MIM-146", "ACF.Missiles.AntiTankGuided", function(CLASS)
+Classes.DefineClass("ACF.Missiles.SurfaceToAir.MIM-146", "ACF.Missiles.AntiTankGuided", function(CLASS)
 	CLASS.Name		= "MIM-146 ADATS"
 	CLASS.Description	= "Dual purpose short range suface to air and anti tank missile."
 	CLASS.Model		= "models/missiles/mim146.mdl"
@@ -54,9 +54,9 @@ Classes.DefineClass("ACF.Missiles.AntiTankGuided.MIM-146", "ACF.Missiles.AntiTan
 	CLASS.ReloadTime	= 30
 	CLASS.ExhaustPos  = Vector(-44)
 	CLASS.Racks		= { ["ACF.Racks.VT1xPOD"] = true }
-	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["Semi-Active Radar"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.SemiActiveRadar"] = true }
 	CLASS.Navigation  = "APN"
-	CLASS.Fuzes		= { Contact = true }
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true }
 	CLASS.SeekCone	= 20
 	CLASS.ViewCone	= 40
 	CLASS.Agility		= 0.01
@@ -99,9 +99,9 @@ Classes.DefineClass("ACF.Missiles.SurfaceToAir.9M311", "ACF.Missiles.SurfaceToAi
 	CLASS.ReloadTime	= 45
 	CLASS.ExhaustPos  = Vector(-49.5)
 	CLASS.Racks		= { ["ACF.Racks.9m311xPOD"] = true }
-	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.SemiActiveRadar"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.SemiActiveRadar"] = true }
 	CLASS.Navigation  = "APN"
-	CLASS.Fuzes		= { Contact = true, Radio = true }
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Radio"] = true }
 	CLASS.SeekCone	= 15
 	CLASS.ViewCone	= 25
 	CLASS.Agility		= 0.0015
@@ -142,9 +142,9 @@ Classes.DefineClass("ACF.Missiles.SurfaceToAir.9M331", "ACF.Missiles.SurfaceToAi
 	CLASS.ReloadTime	= 60
 	CLASS.ExhaustPos  = Vector(-44)
 	CLASS.Racks		= { ["ACF.Racks.9m331xPOD"] = true }
-	CLASS.Guidance	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.SemiActiveRadar"] = true, ["Anti-missile"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.SemiActiveRadar"] = true, ["ACF.Missiles.Guidance.AntiMissile"] = true }
 	CLASS.Navigation  = "APN"
-	CLASS.Fuzes		= { Contact = true, Radio = true }
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Radio"] = true }
 	CLASS.SeekCone	= 10
 	CLASS.ViewCone	= 180
 	CLASS.Agility		= 0.3
