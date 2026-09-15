@@ -29,7 +29,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.3M-54 Kalibr", "ACF.Missiles.Tactical
 	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
 	CLASS.ViewCone	= 180
 	CLASS.SeekCone	= 20
-	CLASS.Agility		= 0.065
+	CLASS.Agility		= 0.5
 	CLASS.ArmDelay	= 0.5
 	CLASS.Round = {
 		Model           = "models/macc/Kalibr.mdl",
@@ -45,7 +45,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.3M-54 Kalibr", "ACF.Missiles.Tactical
 		DragCoef        = 4,
 		FinMul          = 0.7,
 		GLimit          = 14,
-		TailFinMul      = 0.01,
+		TailFinMul      = 0.2,
 		PenMul          = 1,
 		FillerMul       = 12,
 		LinerMassMul    = 1,
@@ -70,13 +70,13 @@ Classes.DefineClass("ACF.Missiles.Tactical.BGM-109 Tomahawk", "ACF.Missiles.Tact
 	CLASS.Year		= 1983
 	CLASS.ReloadTime	= 120
 	CLASS.ExhaustPos  = Vector(-29)
-	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
+	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true, ["ACF.Racks.1xVLS"] = true, ["ACF.Racks.4xVLS"] = true }
 	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.ActiveRadar"] = true, ["ACF.Missiles.Guidance.WireSACLOS"] = true }
 	CLASS.Navigation  = "PN"
 	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
 	CLASS.ViewCone	= 180
 	CLASS.SeekCone	= 20
-	CLASS.Agility		= 0.075
+	CLASS.Agility		= 0.5
 	CLASS.ArmDelay	= 0.5
 	CLASS.Round = {
 		Model           = "models/macc/Tomahawk.mdl",
@@ -92,7 +92,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.BGM-109 Tomahawk", "ACF.Missiles.Tact
 		DragCoef        = 4,
 		FinMul          = 0.7,
 		GLimit          = 14,
-		TailFinMul      = 0.01,
+		TailFinMul      = 0.2,
 		PenMul          = 1,
 		FillerMul       = 0.85,
 		LinerMassMul    = 1,
@@ -122,7 +122,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.AGM-84 Harpoon", "ACF.Missiles.Tactic
 	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.ActiveRadar"] = true }
 	CLASS.Navigation  = "PN"
 	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
-	CLASS.ViewCone	= 120
+	CLASS.ViewCone	= 60
 	CLASS.SeekCone	= 20
 	CLASS.Agility		= 0.015
 	CLASS.ArmDelay	= 0.5
@@ -199,71 +199,5 @@ Classes.DefineClass("ACF.Missiles.Tactical.Storm Shadow", "ACF.Missiles.Tactical
 	CLASS.Preview = {
 		Height = 90,
 		FOV    = 60,
-	}
-end)
-
-Classes.DefineClass("ACF.Missiles.AntiTankGuided.AGM-114L", "ACF.Missiles.Tactical", function(CLASS)
-	CLASS.Name			= "AGM-114L Hellfire"
-	CLASS.Description	= "The AGM-114L Hellfire is a heavy radar guided missile, used often by American aircraft and more recently used on ships providing anti drone and small craft capabilities."
-	CLASS.Model			= "models/missiles/agm_114.mdl"
-	CLASS.Length		= 160
-	CLASS.Caliber		= 180
-	CLASS.Mass			= 49
-	CLASS.Diameter		= 6.5 * ACF.InchToMm -- in mm
-	CLASS.Year			= 1984
-	CLASS.ReloadTime	= 60
-	CLASS.ExhaustPos	= Vector(-29)
-	CLASS.Racks			= { ["ACF.Racks.1xRK"] = true, ["ACF.Racks.1xRK_small"] = true, ["ACF.Racks.2x AGM-114"] = true, ["ACF.Racks.4x AGM-114"] = true }
-	CLASS.Guidances	    = { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.ActiveRadar"] = true }
-	CLASS.Navigation	= "APN"
-	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true }
-	CLASS.ViewCone		= 120
-	CLASS.SeekCone		= 20
-	CLASS.Agility		= 0.015
-	CLASS.ArmDelay		= 0.25
-	CLASS.HitDeviate	= true
-	CLASS.Bodygroups	= {
-		guidance = {
-			DataSource = function(Entity)
-				return Entity.GuidanceData and Entity.GuidanceData.Name
-			end,
-			Laser = {
-				OnRack = "laser.smd",
-			},
-			["ACF.Missiles.Guidance.ActiveRadar"] = {
-				OnRack = "radar.smd",
-			}
-		}
-	}
-	CLASS.Round			= {
-		Model           	= "models/missiles/agm_114.mdl",
-		MaxLength       	= 160,
-		Armor           	= 1,
-		ProjLength      	= 30,
-		PropLength      	= 56,
-		Thrust          	= 210000, -- in kg*in/s^2
-		FuelConsumption 	= 0.03, -- in g/s/f
-		StarterPercent  	= 0.12,
-		MaxAgilitySpeed 	= 40, -- in m/s
-		DragCoef        	= 0.005,
-		FinMul          	= 0.1,
-		GLimit          	= 14,
-		TailFinMul      	= 0.01,
-		PenMul          	= 1,
-		FillerMul       	= 12,
-		LinerMassMul    	= 1,
-		Standoff        	= 51,
-		CanDelayLaunch  	= true,
-		ActualLength    	= 64,
-		ActualWidth     	= 10
-	}
-	CLASS.Preview		= {
-		Height = 90,
-		FOV    = 60,
-	}
-	CLASS.LimitConVar 	= {
-		Name = "_acfm_hellfire_L",
-		Amount = 8,
-		Text = "Maximum number of longbow missiles that can be loaded at once."
 	}
 end)

@@ -65,3 +65,52 @@ Classes.DefineClass("ACF.Racks.9m331xPOD", "ACF.Racks.BaseRack", function(CLASS)
 		{ Name = "missile1", Position = Vector(-8.30,-6.2) },
 	}
 end)
+
+Classes.DefineClass("ACF.Racks.1xVLS", "ACF.Racks.BaseRack", function(CLASS)
+	CLASS.Name		= "Single VLS Cell"
+	CLASS.Description	= "A single VLS Cell."
+	CLASS.Model		= "models/macc/VLS_SingleBase.mdl"
+	CLASS.RackModel	= "models/macc/VLS_Single_Cover.mdl"
+	CLASS.EntType		= "Pod"
+	CLASS.Caliber		= 235
+	CLASS.Mass		= 4000
+	CLASS.Year		= 1970
+	CLASS.Armor		= 10
+	CLASS.Preview = {
+		Height = 110,
+		FOV    = 60,
+	}
+
+	CLASS.ProtectMissile = true
+	CLASS.HideMissile = false
+
+	CLASS.MountPoints = {
+		{ Name = "missile1", Position = Vector(134,0,-2.25) },
+	}
+end)
+
+Classes.DefineClass("ACF.Racks.4xVLS", "ACF.Racks.BaseRack", function(CLASS)
+	CLASS.Name		= "Quad VLS Cell"
+	CLASS.Description	= "A Quad VLS Cell."
+	CLASS.Model		= "models/macc/VLS_4X.mdl"
+	CLASS.RackModel	= "models/macc/VLS_Single_Cover.mdl"
+	CLASS.EntType		= "Pod"
+	CLASS.Caliber		= 518
+	CLASS.Mass		= 4000
+	CLASS.Year		= 1970
+	CLASS.Armor		= 10
+	CLASS.Preview = {
+		Height = 110,
+		FOV    = 60,
+	}
+
+	CLASS.ProtectMissile = true
+	CLASS.HideMissile = false
+
+	CLASS.MountPoints = {
+		{ Name = "missile1", Position = Vector(134,98,-2.25) },
+		{ Name = "missile2", Position = Vector(134,32.5,-2.25) },
+		{ Name = "missile3", Position = Vector(134,-32.5,-2.25) },
+		{ Name = "missile4", Position = Vector(134,-98,-2.25) },
+	}
+end)
