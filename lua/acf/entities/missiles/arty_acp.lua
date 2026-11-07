@@ -54,9 +54,9 @@ Classes.DefineClass("ACF.Missiles.Artillery.MGM-140", "ACF.Missiles.Artillery", 
 	CLASS.ReloadTime	= 120
 	CLASS.ExhaustPos  	= Vector(-70)
 	CLASS.Racks			= { ["ACF.Racks.1xRK"] = true }
-	CLASS.Guidances		= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.Laser"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.GPSTerrainAvoidant"] = true}
 	CLASS.Navigation  	= "PN"
-	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Timed"] = true, ["ACF.Missiles.Fuze.Optical"] = true, ["ACF.Missiles.Fuze.Altitude"] = true, Cluster = true }
+	CLASS.Fuzes			= { ["ACF.Missiles.Fuze.Contact"] = true, ["ACF.Missiles.Fuze.Timed"] = true, ["ACF.Missiles.Fuze.Optical"] = true}
 	CLASS.ViewCone		= 30
 	CLASS.Agility		= 0.3
 	CLASS.ArmDelay		= 0.5

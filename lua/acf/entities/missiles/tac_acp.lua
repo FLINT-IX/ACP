@@ -24,7 +24,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.3M-54 Kalibr", "ACF.Missiles.Tactical
 	CLASS.ReloadTime	= 120
 	CLASS.ExhaustPos  = Vector(-29)
 	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
-	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.ActiveRadar"] = true, ["ACF.Missiles.Guidance.WireSACLOS"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.GPSTerrainAvoidant"] = true}
 	CLASS.Navigation  = "PN"
 	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
 	CLASS.ViewCone	= 180
@@ -71,7 +71,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.BGM-109 Tomahawk", "ACF.Missiles.Tact
 	CLASS.ReloadTime	= 120
 	CLASS.ExhaustPos  = Vector(-29)
 	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true, ["ACF.Racks.1xVLS"] = true, ["ACF.Racks.4xVLS"] = true }
-	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.ActiveRadar"] = true, ["ACF.Missiles.Guidance.WireSACLOS"] = true }
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.GPSTerrainAvoidant"] = true}
 	CLASS.Navigation  = "PN"
 	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
 	CLASS.ViewCone	= 180
@@ -166,7 +166,7 @@ Classes.DefineClass("ACF.Missiles.Tactical.Storm Shadow", "ACF.Missiles.Tactical
 	CLASS.ReloadTime	= 120
 	CLASS.ExhaustPos  = Vector(-29)
 	CLASS.Racks		= { ["ACF.Racks.1xRK"] = true }
-	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true}
+	CLASS.Guidances	= { ["ACF.Missiles.Guidance.Dumb"] = true, ["ACF.Missiles.Guidance.GPSGuided"] = true, ["ACF.Missiles.Guidance.GPSTerrainAvoidant"] = true}
 	CLASS.Navigation  = "PN"
 	CLASS.Fuzes		= { ["ACF.Missiles.Fuze.Contact"] = true }
 	CLASS.ViewCone	= 120
